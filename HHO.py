@@ -106,7 +106,7 @@ def HHO(objf,lb,ub,dim,SearchAgents_no,Max_iter):
                     X[i,:]=(Rabbit_Location-X[i,:])-Escaping_Energy*abs(Jump_strength*Rabbit_Location-X[i,:])
                 
                 #phase 2: --------performing team rapid dives (leapfrog movements)----------
-
+                fitness = objf(X[i, :])
                 if r<0.5 and abs(Escaping_Energy)>=0.5: # Soft besiege Eq. (10) in paper
                     #rabbit try to escape by many zigzag deceptive motions
                     Jump_strength=2*(1-random.random())
